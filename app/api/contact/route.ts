@@ -17,12 +17,23 @@ export async function POST(req: Request) {
       }
     }
 
+    // Validate required environment variables
+    const gmailUser = process.env.GMAIL_USER || "chemparks.in@gmail.com"
+    const gmailAppPassword = process.env.GMAIL_APP_PASSWORD
+
+    if (!gmailAppPassword || gmailAppPassword === "placeholder_for_netlify_deployment") {
+      console.error("Gmail App Password not configured")
+      return NextResponse.json({
+        error: "Email service not properly configured. Please contact administrator."
+      }, { status: 500 })
+    }
+
     // Create a transporter object using SMTP transport
     const transporter = nodemailer.createTransport({
       service: "gmail", // Using Gmail service
       auth: {
-        user: "chemparks.in@gmail.com", // Your Gmail address
-        pass: process.env.GMAIL_APP_PASSWORD, // Your Gmail app password (should be set in environment variables)
+        user: gmailUser,
+        pass: gmailAppPassword,
       },
     })
 
@@ -132,16 +143,16 @@ export async function POST(req: Request) {
 
     // Send email to admin team
     const adminMailOptions = {
-      from: "ChemParks India <chemparks.in@gmail.com>",
-      to: sendTo || "info@chemparks.in", // Use custom sendTo if provided
+      from: process.env.EMAIL_FROM || "ChemParks India <chemparks.in@gmail.com>",
+      to: sendTo || process.env.EMAIL_TO || "info@chemparks.in",
       subject: emailSubject,
       html: adminEmailContent,
     }
 
     // Send confirmation email to customer (only if email is provided)
-    if (email && email !== 'chemparks.in@gmail.com') {
+    if (email && email !== gmailUser) {
       const customerMailOptions = {
-        from: "ChemParks India <chemparks.in@gmail.com>",
+        from: process.env.EMAIL_FROM || "ChemParks India <chemparks.in@gmail.com>",
         to: email,
         subject: "Thank you for contacting ChemParks India - We'll be in touch soon!",
         html: customerEmailContent,
