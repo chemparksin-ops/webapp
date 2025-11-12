@@ -12,10 +12,18 @@ const POPUP_DELAY = 5 * 60 * 1000; // 5 minutes
 
 export function PhoneCapturePopup() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const pathname = usePathname();
   const { toast } = useToast();
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    // Only run on client-side
+    if (!isClient) return;
+
     const cookieConsent = localStorage.getItem("cookie-consent");
     if (!cookieConsent) {
       return;
@@ -53,7 +61,7 @@ export function PhoneCapturePopup() {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("click", handleInteraction);
     };
-  }, []);
+  }, [isClient]);
 
   useEffect(() => {
     const openPopup = () => setIsOpen(true);
@@ -63,11 +71,14 @@ export function PhoneCapturePopup() {
 
 
   useEffect(() => {
+    // Only run on client-side
+    if (!isClient) return;
+
     const cookieConsent = localStorage.getItem("cookie-consent");
     if (!cookieConsent) {
       return;
     }
-    
+
     const formSubmitted = localStorage.getItem("leadCaptureFormSubmitted");
     if (formSubmitted) {
       return;
@@ -82,7 +93,7 @@ export function PhoneCapturePopup() {
       setIsOpen(true);
       localStorage.setItem("leadCapturePopupShown", Date.now().toString());
     }
-  }, [pathname]);
+  }, [pathname, isClient]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -120,6 +131,11 @@ export function PhoneCapturePopup() {
       });
     }
   };
+
+  // Don't render on server-side
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>

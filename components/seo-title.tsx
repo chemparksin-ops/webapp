@@ -1,12 +1,20 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 
 export function DynamicTitle() {
+  const [isClient, setIsClient] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  useEffect(() => {
+    // Only run on client-side
+    if (!isClient) return
+
     // Dynamic page titles based on route
     const titles = {
       "/": "ChemParks India - Best Water Treatment Solutions Company",
@@ -33,7 +41,6 @@ export function DynamicTitle() {
 
     // For blog posts and product/service pages, use their specific titles
     if (pathname.startsWith("/blog/")) {
-      const slug = pathname.replace("/blog/", "")
       // This would come from your blog data
       title = "ChemParks Blog - Water Treatment Insights"
     } else if (pathname.startsWith("/services/")) {
@@ -47,7 +54,7 @@ export function DynamicTitle() {
     if (title) {
       document.title = title
     }
-  }, [pathname])
+  }, [pathname, isClient])
 
   return null // This component doesn't render anything, it just manages the title
 }
