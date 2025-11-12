@@ -94,7 +94,14 @@ export function Footer() {
             <p className="text-white/70 text-sm text-center sm:text-left font-light">
               © {new Date().getFullYear()} ChemParks. All rights reserved.
               <br />
-              Developed by Yesp Tech Solutions
+              Developed by{" "}
+              <a
+                href="tel:9001270298"
+                className="text-white/80 hover:text-white transition-colors duration-200 underline decoration-dotted underline-offset-2"
+              >
+                Yesp Tech Solutions
+              </a>{" "}
+              <span className="text-white/60 text-xs">(+91 9001270298)</span>
             </p>
             <div className="flex gap-6">
               <Link href="/privacy-policy" className="text-white/70 hover:text-white text-sm transition-colors duration-200 font-light">
