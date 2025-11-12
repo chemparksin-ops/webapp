@@ -101,46 +101,9 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   icons: {
-    icon: [
-      {
-        url: "/Chem_park_Logo_1-01.jpg",
-        type: "image/jpeg",
-        sizes: "32x32",
-      },
-      {
-        url: "/Chem_park_Logo_1-01.jpg",
-        type: "image/jpeg",
-        sizes: "16x16",
-      },
-      {
-        url: "/Chem_park_Logo_1-01.jpg",
-        type: "image/jpeg",
-        sizes: "48x48",
-      },
-      {
-        url: "/Chem_park_Logo_1-01.jpg",
-        type: "image/jpeg",
-        sizes: "64x64",
-      },
-      {
-        url: "/Chem_park_Logo_1-01.jpg",
-        type: "image/jpeg",
-        sizes: "128x128",
-      },
-      {
-        url: "/Chem_park_Logo_1-01.jpg",
-        type: "image/jpeg",
-        sizes: "256x256",
-      },
-    ],
+    icon: "/Chem_park_Logo_1-01.jpg",
     shortcut: "/Chem_park_Logo_1-01.jpg",
-    apple: [
-      {
-        url: "/Chem_park_Logo_1-01.jpg",
-        sizes: "180x180",
-        type: "image/jpeg",
-      },
-    ],
+    apple: "/Chem_park_Logo_1-01.jpg",
   },
 }
 
