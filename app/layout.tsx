@@ -7,7 +7,6 @@ import { DynamicTitle } from "@/components/seo-title"
 import { CookieConsent } from "@/components/cookie-consent"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { PhoneCapturePopup } from "@/components/phone-capture-popup"
-import { Toaster } from "@/components/ui/sonner"
 import { ContactSalesPopup } from "@/components/contact-sales-popup"
 import { LeadChatWidget } from "@/components/lead-chat-widget"
 
@@ -156,7 +155,6 @@ export default function RootLayout({
         <PhoneCapturePopup />
         <ContactSalesPopup />
         <LeadChatWidget />
-        <Toaster />
         <Analytics />
       </body>
     </html>
