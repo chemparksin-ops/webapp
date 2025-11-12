@@ -1,3 +1,5 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Loader } from "@/components/loader"
 import { Footer } from "@/components/footer"
@@ -273,11 +275,7 @@ const serviceData = {
   }
 }
 
-export async function generateStaticParams() {
-  return Object.keys(serviceData).map((service) => ({
-    service: service,
-  }))
-}
+export const dynamic = "force-dynamic"
 
 export default function ServicePage({ params }: { params: { service: string } }) {
   const service = serviceData[params.service as keyof typeof serviceData]
