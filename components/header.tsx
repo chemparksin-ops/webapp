@@ -134,12 +134,12 @@ export function Header() {
         <>
           {/* Backdrop overlay */}
           <div
-            className="fixed inset-0 bg-black/50 z-[9998] md:hidden transition-opacity duration-300 ease-in-out"
+            className="fixed inset-0 bg-black/50 z-[99999] md:hidden transition-opacity duration-300 ease-in-out"
             onClick={handleCloseMenu}
           />
 
           {/* Sidebar */}
-          <div className={`fixed top-0 left-0 h-full w-72 bg-background shadow-2xl z-[9999] md:hidden transition-transform duration-300 ease-out overflow-hidden flex flex-col ${
+          <div className={`fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-background shadow-2xl z-[100000] md:hidden transition-transform duration-300 ease-out overflow-hidden flex flex-col ${
             isOpen ? 'translate-x-0' : '-translate-x-full'
           }`}>
             {/* Logo and name at top */}

@@ -4,15 +4,15 @@ import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/components/ui/use-toast";
 import { Textarea } from "@/components/ui/textarea";
 import { ContactIcon } from "./icons/contact";
 
 export function ContactSalesPopup() {
   const [isOpen, setIsOpen] = useState(false);
-  const { toast } = useToast();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const openPopup = () => setIsOpen(true);
     window.addEventListener("open-contact-sales-popup", openPopup);
     return () => window.removeEventListener("open-contact-sales-popup", openPopup);
@@ -36,24 +36,13 @@ export function ContactSalesPopup() {
       });
 
       if (response.ok) {
-        toast({
-          title: "Success!",
-          description: "Thank you for your submission.",
-        });
+        alert("Success! Thank you for your submission.");
         setIsOpen(false);
       } else {
-        toast({
-          title: "Error",
-          description: "Something went wrong. Please try again.",
-          variant: "destructive",
-        });
+        alert("Error: Something went wrong. Please try again.");
       }
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
+      alert("Error: Something went wrong. Please try again.");
     }
   };
 
