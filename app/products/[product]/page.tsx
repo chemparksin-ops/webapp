@@ -1,3 +1,5 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Loader } from "@/components/loader"
 import { Footer } from "@/components/footer"
@@ -461,11 +463,7 @@ const productData = {
   }
 }
 
-export async function generateStaticParams() {
-  return Object.keys(productData).map((product) => ({
-    product: product,
-  }))
-}
+export const dynamic = "force-dynamic"
 
 export default function ProductPage({ params }: { params: { product: string } }) {
   const product = productData[params.product as keyof typeof productData]
