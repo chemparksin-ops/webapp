@@ -100,8 +100,8 @@ export function Footer() {
                 className="text-white/80 hover:text-white transition-colors duration-200 underline decoration-dotted underline-offset-2"
               >
                 Yesp Tech Solutions
-              </a>{" "}
-              <span className="text-white/60 text-xs">(+91 9001270298)</span>
+              </a>
+         
             </p>
             <div className="flex gap-6">
               <Link href="/privacy-policy" className="text-white/70 hover:text-white text-sm transition-colors duration-200 font-light">
