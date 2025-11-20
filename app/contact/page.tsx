@@ -243,7 +243,7 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-light text-gray-900 mb-3 tracking-wide">Phone</h3>
-                <p className="text-base text-gray-600 font-mono font-light">9500506061</p>
+                <p className="text-base text-gray-600 leading-relaxed font-light">+919500506061</p>
               </a>
 
               {/* Email */}
@@ -254,8 +254,8 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-light text-gray-900 mb-3 tracking-wide">Email</h3>
-                <p className="text-base text-gray-600 font-mono font-light">chemparks@chemparks.in</p>
-                                <p className="text-base text-gray-600 font-mono font-light">chemparks.in@gmail.com</p>
+                <p className="text-base text-gray-600 leading-relaxed font-light">chemparks@chemparks.in</p>
+                                <p className="text-base text-gray-600 leading-relaxed font-light">chemparks.in@gmail.com</p>
               </a>
             </div>
 
