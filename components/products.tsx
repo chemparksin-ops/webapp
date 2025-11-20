@@ -8,7 +8,7 @@ export function Products() {
       description:
         "Advanced reverse osmosis chemicals including antiscalants, cleaners, and biocides for optimal membrane performance.",
       icon: Droplets,
-      specs: "RO Audit Scalent, Membrane Clearance, BioSits, Online System",
+      specs: "RO Anti Scalent, Membrane Clearance, BioSits, Online System",
       image: "/reverse-osmosis-membrane-industrial.jpg",
     },
     {
