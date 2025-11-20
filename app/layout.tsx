@@ -5,50 +5,41 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { DynamicTitle } from "@/components/seo-title"
 import { CookieConsent } from "@/components/cookie-consent"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
+import { FloatingButtons } from "@/components/floating-buttons"
 import { PhoneCapturePopup } from "@/components/phone-capture-popup"
 import { ContactSalesPopup } from "@/components/contact-sales-popup"
 import { LeadChatWidget } from "@/components/lead-chat-widget"
+import { ContactProvider } from "@/contexts/contact-context"
+import { ContactModalManager } from "@/components/contact-modal-manager"
 
 const geistSans = Geist({ subsets: ["latin"] })
 const geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: {
-    default: "ChemParks India - Best Water Treatment Solutions Company | Industrial RO Plant Manufacturer",
-    template: "%s | ChemParks India"
+    default: "ChemParks India - Industrial Water Treatment Plant Manufacturer & Solutions",
+    template: "%s | ChemParks India",
   },
-  description: "Top water treatment company in India providing industrial RO plants, ETP STP systems, ion exchange resins, water softeners, and zero liquid discharge (ZLD) solutions. 30+ years expertise in water purification technology across Mumbai, Delhi, Bangalore, Chennai, Hyderabad, Pune, Gujarat with PAN India presence.",
+  description:
+    "Leading water treatment company in India offering Industrial RO Plants, ETP, STP, ZLD Systems, and Water Treatment Chemicals. Expert solutions for boiler & cooling tower water treatment, water audits, and membrane technologies.",
   keywords: [
-    "water treatment company India",
-    "industrial RO plant manufacturer India",
-    "ETP STP plant manufacturer",
-    "water treatment Delhi Mumbai Bangalore",
-    "ion exchange resins India",
-    "zero liquid discharge ZLD India",
-    "water softener manufacturer",
-    "sewage treatment plant supplier",
-    "effluent treatment plant Gujarat",
-    "water treatment Chennai Hyderabad",
-    "commercial RO system manufacturer",
+    "water treatment plant manufacturer",
+    "industrial RO plant India",
+    "effluent treatment plant ETP",
+    "sewage treatment plant STP",
+    "zero liquid discharge ZLD system",
+    "boiler water treatment chemicals",
+    "cooling tower water treatment",
     "industrial water purification",
-    "drinking water plant supplier",
-    "wastewater treatment solutions India",
-    "water treatment equipment supplier",
-    "CHEMION resins India",
-    "AQUAMEM membranes India",
-    "water audit consultancy",
-    "industrial water plant manufacturer",
-    "municipal water treatment India",
-    "packaged drinking water plant",
-    "mineral water plant manufacturer",
     "water treatment chemicals supplier",
-    "best water treatment company India",
-    "water treatment plant cost",
-    "water treatment equipment price",
-    "industrial RO system dealer",
-    "sewage treatment plant cost",
-    "water purifier plant manufacturer"
+    "RO membrane cleaning chemicals",
+    "water audit services India",
+    "commercial water softener",
+    "demineralization plant DM plant",
+    "water treatment consultation",
+    "industrial water filters",
+    "wastewater recycling plant",
+    "ChemParks water solutions",
   ],
   authors: [{ name: "ChemParks Team" }],
   creator: "ChemParks",
@@ -67,7 +58,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://chemparks.in",
     title: "ChemParks - Advanced Water & Environment Management Solutions",
-    description: "Leading provider of comprehensive water treatment solutions with 30+ years of expertise in water and environment management.",
+    description:
+      "Leading provider of comprehensive water treatment solutions with 30+ years of expertise in water and environment management.",
     siteName: "ChemParks",
     images: [
       {
@@ -104,32 +96,31 @@ export const metadata: Metadata = {
     shortcut: "/Chem_park_Logo_1-01.jpg",
     apple: "/Chem_park_Logo_1-01.jpg",
   },
+  generator: "v0.app",
 }
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "ChemParks",
-  "url": "https://chemparks.in",
-  "logo": "https://chemparks.in/Chem_park_Logo_1-01.jpg",
-  "description": "Leading provider of comprehensive water treatment solutions including ion exchange resins, membrane systems, and specialty chemicals for industrial, municipal, and residential applications.",
-  "sameAs": [
-    "https://twitter.com/ChemParks",
-    "https://linkedin.com/company/chemparks"
-  ],
-  "contactPoint": {
+  name: "ChemParks",
+  url: "https://chemparks.in",
+  logo: "https://chemparks.in/Chem_park_Logo_1-01.jpg",
+  description:
+    "Leading provider of comprehensive water treatment solutions including ion exchange resins, membrane systems, and specialty chemicals for industrial, municipal, and residential applications.",
+  sameAs: ["https://twitter.com/ChemParks", "https://linkedin.com/company/chemparks"],
+  contactPoint: {
     "@type": "ContactPoint",
-    "telephone": "+1-800-XXX-XXXX",
-    "contactType": "customer service",
-    "availableLanguage": ["English"]
+    telephone: "+1-800-XXX-XXXX",
+    contactType: "customer service",
+    availableLanguage: ["English"],
   },
-  "address": {
+  address: {
     "@type": "PostalAddress",
-    "addressLocality": "Your City",
-    "addressRegion": "Your State",
-    "postalCode": "XXXXX",
-    "addressCountry": "Your Country"
-  }
+    addressLocality: "Your City",
+    addressRegion: "Your State",
+    postalCode: "XXXXX",
+    addressCountry: "Your Country",
+  },
 }
 
 export default function RootLayout({
@@ -143,19 +134,22 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData)
+            __html: JSON.stringify(structuredData),
           }}
         />
       </head>
       <body className={`${geistSans.className} font-sans antialiased`}>
-        <DynamicTitle />
-        {children}
-        <CookieConsent />
-        <FloatingWhatsApp />
-        <PhoneCapturePopup />
-        <ContactSalesPopup />
-        <LeadChatWidget />
-        <Analytics />
+        <ContactProvider>
+          <DynamicTitle />
+          {children}
+          <ContactModalManager />
+          <CookieConsent />
+          <FloatingButtons />
+          <PhoneCapturePopup />
+          <ContactSalesPopup />
+          <LeadChatWidget />
+          <Analytics />
+        </ContactProvider>
       </body>
     </html>
   )

@@ -3,86 +3,94 @@ import { Loader } from "@/components/loader"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { ClipboardCheck, Droplets, Thermometer, Wind, Activity, Users } from "lucide-react"
 
 export default function ServicesPage() {
   const services = [
     {
-      title: "Operations & Maintenance",
-      slug: "om",
-      description: "Comprehensive preventive, routine, and emergency support",
+      title: "ETP Audit Services",
+      description:
+        "Comprehensive evaluation of Effluent Treatment Plants to ensure regulatory compliance and optimal performance.",
+      icon: <ClipboardCheck className="w-12 h-12 text-purple-600" />,
+      slug: "etp-audit-services",
+      image: "/effluent-treatment-plant.jpg",
       features: [
-        "Preventive maintenance programs",
-        "Routine monitoring and reporting",
-        "AMC contracts with guaranteed SLAs",
-        "Quality assurance checks",
-        "24/7 emergency support",
-      ],
-      icon: "🔧",
-    },
-    {
-      title: "Plant Rehabilitation & Upgrade",
-      slug: "rehabilitation",
-      description: "System optimization and technology upgrades",
-      features: [
-        "Comprehensive system audits",
-        "Performance optimization analysis",
-        "Technology and equipment upgrades",
-        "Staff training programs",
-        "Efficiency improvements",
-      ],
-      icon: "⚡",
-    },
-    {
-      title: "Water Audits & Consulting",
-      slug: "audits",
-      description: "Expert analysis and sustainability strategy",
-      features: [
-        "Water efficiency analysis",
+        "Complete ETP system evaluation",
         "Regulatory compliance assessment",
-        "Sustainability strategy development",
-        "Recycling opportunity identification",
-        "Technical recommendations",
+        "Performance optimization analysis",
+        "Efficiency improvement recommendations",
+        "Treatment process optimization",
       ],
-      icon: "📊",
     },
     {
-      title: "Spare Parts & Consumables",
-      slug: "spares",
-      description: "Reliable supply of genuine parts and consumables",
+      title: "WTP Audit Services",
+      description: "Detailed assessment of Water Treatment Plants to guarantee water quality and system efficiency.",
+      icon: <Droplets className="w-12 h-12 text-blue-500" />,
+      slug: "wtp-audit-services",
+      image: "/water-treatment-plant.jpg",
       features: [
-        "Genuine membranes and resins",
-        "Filter media and hardware",
-        "Service kits and replacement parts",
-        "Online ordering and bulk discounts",
-        "Expedited delivery options",
+        "Water quality analysis",
+        "Treatment process audit",
+        "Equipment performance check",
+        "Chemical dosing optimization",
+        "Drinking water compliance",
       ],
-      icon: "📦",
     },
     {
-      title: "Project Financing",
-      slug: "financing",
-      description: "Flexible financial models for water projects",
+      title: "Boiler Water Treatment Audit",
+      description: "Specialized audit to prevent scale and corrosion, optimizing energy efficiency in boiler systems.",
+      icon: <Thermometer className="w-12 h-12 text-red-500" />,
+      slug: "boiler-water-treatment-audit",
+      image: "/industrial-boiler-room.jpg",
       features: [
-        "EPC (Engineering, Procurement, Construction)",
-        "BOO (Build, Own, Operate)",
-        "BOT (Build, Operate, Transfer)",
-        "BOOT models available",
-        "Technical and financial consultancy",
+        "Water chemistry analysis",
+        "Scale and corrosion assessment",
+        "Blowdown optimization",
+        "Chemical treatment evaluation",
+        "Energy efficiency analysis",
       ],
-      icon: "💰",
     },
     {
-      title: "24x7 Emergency Support",
-      slug: "support",
-      description: "Round-the-clock technical and emergency assistance",
+      title: "Cooling Tower Treatment Audit",
+      description: "Expert analysis of cooling tower systems to control biological growth, corrosion, and scale.",
+      icon: <Wind className="w-12 h-12 text-cyan-500" />,
+      slug: "cooling-tower-treatment-audit",
+      image: "/cooling-tower-industrial.jpg",
       features: [
-        "Immediate response helpline",
-        "Rapid breakdown support",
-        "Guaranteed SLAs",
-        "Remote and onsite assistance",
-        "Expert technical team",
+        "Water microbiology testing",
+        "Legionella risk assessment",
+        "Corrosion and scale control",
+        "Drift and evaporation analysis",
+        "Treatment program optimization",
       ],
-      icon: "🆘",
+    },
+    {
+      title: "RO Troubleshooting Audit",
+      description: "Diagnostic services for Reverse Osmosis systems to identify fouling and improve recovery rates.",
+      icon: <Activity className="w-12 h-12 text-green-500" />,
+      slug: "ro-troubleshooting-audit",
+      image: "/reverse-osmosis-system.jpg",
+      features: [
+        "Membrane performance analysis",
+        "Fouling identification",
+        "Recovery rate optimization",
+        "Pressure vessel inspection",
+        "Pre-treatment system review",
+      ],
+    },
+    {
+      title: "Water Treatment Consultation",
+      description: "Professional consulting for system design, technology selection, and sustainability planning.",
+      icon: <Users className="w-12 h-12 text-orange-500" />,
+      slug: "water-treatment-consultation",
+      image: "/water-treatment-facility-industrial.jpg",
+      features: [
+        "System design optimization",
+        "Technology selection guidance",
+        "Regulatory compliance support",
+        "Cost reduction strategies",
+        "Sustainability planning",
+      ],
     },
   ]
 
@@ -92,8 +100,15 @@ export default function ServicesPage() {
       <Header />
       <main className="pt-16 md:pt-24">
         {/* Professional Page Header */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/water-treatment-facility-industrial.jpg"
+              alt="Services Background"
+              className="w-full h-full object-cover opacity-10"
+            />
+          </div>
+          <div className="max-w-4xl mx-auto text-center relative z-10">
             <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 tracking-wide">Services</h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
               Comprehensive water treatment solutions for your industrial needs
@@ -108,24 +123,38 @@ export default function ServicesPage() {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="p-8 bg-white border border-gray-100 rounded-lg hover:border-gray-300 hover:shadow-lg transition-all duration-300"
+                  className="bg-white border border-gray-100 rounded-lg hover:border-gray-300 hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col"
                 >
-                  <div className="text-5xl mb-6">{service.icon}</div>
-                  <h2 className="text-xl md:text-2xl font-light text-gray-900 mb-4 tracking-wide">{service.title}</h2>
-                  <p className="text-base text-gray-600 mb-6 leading-relaxed font-light">{service.description}</p>
+                  {/* Added image to service card */}
+                  <div className="h-48 overflow-hidden relative">
+                    <img
+                      src={service.image || "/placeholder.svg"}
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white to-transparent h-12"></div>
+                  </div>
 
-                  <ul className="space-y-3 mb-8">
-                    {service.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3 text-base text-gray-600 leading-relaxed">
-                        <span className="text-gray-400 mt-1 text-lg">•</span>
-                        <span className="font-light">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="p-8 flex flex-col flex-grow">
+                    <div className="mb-4">{service.icon}</div>
+                    <h2 className="text-xl md:text-2xl font-light text-gray-900 mb-4 tracking-wide">{service.title}</h2>
+                    <p className="text-base text-gray-600 mb-6 leading-relaxed font-light">{service.description}</p>
 
-                  <Link href={`/services/${service.slug}`}>
-                    <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 text-base font-light tracking-wide">Learn More</Button>
-                  </Link>
+                    <ul className="space-y-3 mb-8 flex-grow">
+                      {service.features.map((feature, i) => (
+                        <li key={i} className="flex items-start gap-3 text-base text-gray-600 leading-relaxed">
+                          <span className="text-gray-400 mt-1 text-lg">•</span>
+                          <span className="font-light">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Link href={`/services/${service.slug}`} className="mt-auto">
+                      <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 text-base font-light tracking-wide">
+                        Learn More
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>

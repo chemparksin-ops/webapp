@@ -4,75 +4,82 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* White-Dominant Theme with Purple/Pink/Yellow Accents */
-  --background: #FFFFFF;
-  --foreground: #1A1A1A;
-  --card: #FFFFFF;
-  --card-foreground: #1A1A1A;
-  --popover: #FFFFFF;
-  --popover-foreground: #1A1A1A;
-  --primary: #912F9F;
-  --primary-foreground: #FFFFFF;
-  --secondary: #F8F5FB;
-  --secondary-foreground: #1A1A1A;
-  --muted: #F8F5FB;
+  /* Water Treatment Theme - Blue Dominant */
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  /* Updated primary color to water blue */
+  --primary: #0077be;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f9ff;
+  --secondary-foreground: #1a1a1a;
+  --muted: #f0f9ff;
   --muted-foreground: #666666;
-  --accent: #E63A7B;
-  --accent-foreground: #FFFFFF;
-  --destructive: #DC2626;
-  --destructive-foreground: #FFFFFF;
-  --border: rgba(0, 0, 0, 0.08);
-  --input: #F8F5FB;
-  --ring: #912F9F;
-  --chart-1: #912F9F;
-  --chart-2: #E63A7B;
-  --chart-3: #FFD046;
-  --chart-4: #A855F7;
-  --chart-5: #F472B6;
+  /* Updated accent to a teal/cyan */
+  --accent: #06b6d4;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 119, 190, 0.15);
+  --input: #f0f9ff;
+  /* Updated ring color */
+  --ring: #0077be;
+  /* Updated chart colors to blues/teals/greens */
+  --chart-1: #0077be;
+  --chart-2: #06b6d4;
+  --chart-3: #10b981;
+  --chart-4: #3b82f6;
+  --chart-5: #6366f1;
   --radius: 1rem;
-  --sidebar: #FFFFFF;
-  --sidebar-foreground: #1A1A1A;
-  --sidebar-primary: #912F9F;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #F8F5FB;
-  --sidebar-accent-foreground: #1A1A1A;
-  --sidebar-border: rgba(0, 0, 0, 0.08);
-  --sidebar-ring: #912F9F;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1a1a1a;
+  /* Updated sidebar primary */
+  --sidebar-primary: #0077be;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f0f9ff;
+  --sidebar-accent-foreground: #1a1a1a;
+  --sidebar-border: rgba(0, 119, 190, 0.15);
+  --sidebar-ring: #0077be;
 }
 
 .dark {
-  --background: #0F0F0F;
-  --foreground: #F8F8F8;
-  --card: #1A1A1A;
-  --card-foreground: #F8F8F8;
-  --popover: #1A1A1A;
-  --popover-foreground: #F8F8F8;
-  --primary: #A855F7;
-  --primary-foreground: #FFFFFF;
-  --secondary: #2A2A2A;
-  --secondary-foreground: #F8F8F8;
-  --muted: #2A2A2A;
-  --muted-foreground: #A0A0A0;
-  --accent: #F472B6;
-  --accent-foreground: #FFFFFF;
-  --destructive: #EF4444;
-  --destructive-foreground: #FFFFFF;
-  --border: rgba(255, 255, 255, 0.1);
-  --input: #2A2A2A;
-  --ring: #A855F7;
-  --chart-1: #A855F7;
-  --chart-2: #F472B6;
-  --chart-3: #FCD34D;
-  --chart-4: #C084FC;
-  --chart-5: #F9A8D4;
-  --sidebar: #1A1A1A;
-  --sidebar-foreground: #F8F8F8;
-  --sidebar-primary: #A855F7;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #2A2A2A;
-  --sidebar-accent-foreground: #F8F8F8;
-  --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #A855F7;
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+  /* Updated dark mode primary */
+  --primary: #38bdf8;
+  --primary-foreground: #ffffff;
+  --secondary: #334155;
+  --secondary-foreground: #f8fafc;
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  /* Updated dark mode accent */
+  --accent: #22d3ee;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(56, 189, 248, 0.2);
+  --input: #334155;
+  --ring: #38bdf8;
+  --chart-1: #38bdf8;
+  --chart-2: #22d3ee;
+  --chart-3: #34d399;
+  --chart-4: #60a5fa;
+  --chart-5: #818cf8;
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #38bdf8;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: rgba(56, 189, 248, 0.2);
+  --sidebar-ring: #38bdf8;
 }
 
 @theme inline {
@@ -241,18 +248,13 @@
   }
 
   .btn-shine::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.2),
-      transparent
-    );
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s;
   }
 
@@ -358,14 +360,16 @@
 
   /* Modern gradient text */
   .gradient-text {
-    background: linear-gradient(135deg, #FFD046, #F59E0B, #FBBF24);
+    /* Updated gradient to water colors */
+    background: linear-gradient(135deg, #0077be, #06b6d4, #38bdf8);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .gradient-text-purple {
-    background: linear-gradient(135deg, #912F9F, #A855F7, #C084FC);
+    /* Updated to a secondary blue gradient */
+    background: linear-gradient(135deg, #2563eb, #3b82f6, #60a5fa);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -377,7 +381,8 @@
   }
 
   .hover-glow-modern:hover {
-    box-shadow: 0 0 30px rgba(255, 208, 70, 0.3);
+    /* Updated glow color */
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.3);
   }
 
   .hover-lift-modern {
@@ -438,7 +443,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
   33% {
@@ -457,6 +463,29 @@
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+/* Mobile menu specific animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -493,7 +522,10 @@ html {
 /* Touch-friendly targets for mobile */
 @media (max-width: 768px) {
   /* Increase touch targets */
-  button, a, input, textarea {
+  button,
+  a,
+  input,
+  textarea {
     min-height: 44px;
   }
 
@@ -540,10 +572,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #912F9F, #A855F7);
+  /* Updated scrollbar color */
+  background: linear-gradient(135deg, #0077be, #06b6d4);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #7A2B88, #9333EA);
+  /* Updated scrollbar hover color */
+  background: linear-gradient(135deg, #005fa3, #0891b2);
 }
