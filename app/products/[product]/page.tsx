@@ -165,8 +165,8 @@ const productData = {
         ],
       },
       {
-        title: "Oxidizing And Oxidizing Biocides",
-        description: "Broad spectrum oxidizing and non-oxidizing biocides.",
+        title: "Oxidizing And Non-Oxidizing Biocides",
+        description: "Broad spectrum oxidizing and Non-oxidizing biocides.",
         benefits: ["Controls Legionella", "Removes algae and fungi", "Effective against slime"],
       },
     ],
