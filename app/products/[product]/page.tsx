@@ -21,7 +21,7 @@ const productData = {
       "Reverse Osmosis systems are critical for modern water treatment, but they are susceptible to scaling and fouling. Our RO Membrane Solutions provide a complete care package, from antiscalants that handle high silica and hardness to effective cleaners that restore membrane flux.",
     features: [
       {
-        title: "RO Audit Scalent",
+        title: "RO Antiscalants",
         description: "High-performance antiscalant for broad spectrum scale control.",
         benefits: [
           "Prevents calcium carbonate scaling",
@@ -30,12 +30,12 @@ const productData = {
         ],
       },
       {
-        title: "Membrane Clearance",
+        title: "Membrane Cleaners",
         description: "Specialized cleaning agents for organic and inorganic fouling.",
         benefits: ["Restores membrane flux", "Low foaming formula", "Compatible with all membrane types"],
       },
       {
-        title: "BioSits",
+        title: "Biocide",
         description: "Non-oxidizing biocide for controlling bacterial growth.",
         benefits: ["Fast-acting formula", "Prevents bio-film formation", "Low toxicity"],
       },
