@@ -1,11 +1,12 @@
-import { Calendar, Clock, ArrowRight, TrendingUp, Droplet, Shield, Users } from "lucide-react"
+import { Calendar, Clock, ArrowRight, TrendingUp, Droplet, Shield, Activity, Settings } from "lucide-react"
 import Link from "next/link"
 
 export function Blog() {
   const blogPosts = [
     {
       title: "Advanced Ion Exchange Technology: The Future of Water Purification",
-      excerpt: "Discover how CHEMION® resins are revolutionizing industrial water treatment with 99.9% contaminant removal efficiency.",
+      excerpt:
+        "Discover how CHEMION® resins are revolutionizing industrial water treatment with 99.9% contaminant removal efficiency.",
       category: "Technology",
       readTime: "5 min read",
       date: "Nov 8, 2025",
@@ -14,7 +15,8 @@ export function Blog() {
     },
     {
       title: "Zero Liquid Discharge: Sustainable Solutions for Industries",
-      excerpt: "Learn how ZLD systems help industries achieve environmental compliance while reducing water consumption and waste.",
+      excerpt:
+        "Learn how ZLD systems help industries achieve environmental compliance while reducing water consumption and waste.",
       category: "Sustainability",
       readTime: "7 min read",
       date: "Nov 5, 2025",
@@ -23,12 +25,43 @@ export function Blog() {
     },
     {
       title: "Water Treatment in 2025: Trends and Innovations",
-      excerpt: "Explore the latest trends in water treatment technology, from IoT-enabled systems to AI-powered optimization.",
+      excerpt:
+        "Explore the latest trends in water treatment technology, from IoT-enabled systems to AI-powered optimization.",
       category: "Industry Insights",
       readTime: "6 min read",
       date: "Nov 1, 2025",
       image: "/water-treatment-plant-industrial-facility.jpg",
       icon: TrendingUp,
+    },
+    {
+      title: "Optimizing Industrial RO Plants: A Comprehensive Maintenance Guide",
+      excerpt:
+        "Learn essential maintenance strategies to extend membrane life, reduce fouling, and optimize energy consumption in your industrial Reverse Osmosis plant.",
+      category: "Maintenance",
+      readTime: "8 min read",
+      date: "Nov 15, 2025",
+      image: "/reverse-osmosis-system.jpg",
+      icon: Settings,
+    },
+    {
+      title: "Advanced ETP Solutions for Zero Liquid Discharge (ZLD) Compliance",
+      excerpt:
+        "Explore how modern Effluent Treatment Plants with ZLD technology help industries meet strict environmental regulations while recovering valuable water.",
+      category: "Compliance",
+      readTime: "7 min read",
+      date: "Nov 12, 2025",
+      image: "/effluent-treatment-plant.jpg",
+      icon: Shield,
+    },
+    {
+      title: "Boiler Water Treatment: Preventing Corrosion and Scale",
+      excerpt:
+        "A deep dive into chemical treatment programs for industrial boilers to prevent catastrophic failures and improve heat transfer efficiency.",
+      category: "Technical Guide",
+      readTime: "6 min read",
+      date: "Nov 10, 2025",
+      image: "/industrial-boiler-room.jpg",
+      icon: Activity,
     },
   ]
 
@@ -36,7 +69,10 @@ export function Blog() {
     { name: "Technology", count: 12, icon: Droplet },
     { name: "Sustainability", count: 8, icon: Shield },
     { name: "Industry Insights", count: 15, icon: TrendingUp },
-    { name: "Case Studies", count: 6, icon: Users },
+    { name: "Maintenance", count: 12, icon: Settings },
+    { name: "Compliance", count: 8, icon: Shield },
+    { name: "Technical Guide", count: 15, icon: Droplet },
+    { name: "Efficiency", count: 6, icon: TrendingUp },
   ]
 
   return (
@@ -48,7 +84,8 @@ export function Blog() {
             Latest Insights & Innovations
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
-            Stay updated with the latest water treatment technologies, industry trends, and expert insights from our team
+            Stay updated with the latest water treatment technologies, industry trends, and expert insights from our
+            team
           </p>
         </div>
 
@@ -59,7 +96,7 @@ export function Blog() {
             return (
               <Link
                 key={index}
-                href={`/blog/category/${category.name.toLowerCase().replace(' ', '-')}`}
+                href={`/blog/category/${category.name.toLowerCase().replace(" ", "-")}`}
                 className="group bg-white border border-gray-100 rounded-lg p-6 hover:border-gray-300 hover:shadow-lg transition-all duration-500 text-center"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg group-hover:shadow-purple-600/50 transition-all">
@@ -117,7 +154,10 @@ export function Blog() {
                   </p>
 
                   <Link
-                    href={`/blog/${post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
+                    href={`/blog/${post.title
+                      .toLowerCase()
+                      .replace(/[^a-z0-9]+/g, "-")
+                      .replace(/(^-|-$)/g, "")}`}
                     className="inline-flex items-center gap-3 text-gray-900 hover:text-gray-600 text-base font-light tracking-wide transition-colors mt-auto"
                   >
                     Read More

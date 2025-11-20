@@ -39,7 +39,7 @@ export function FloatingWhatsApp() {
   if (!isVisible) return null
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-2 sm:gap-3">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-4 sm:gap-6">
       {/* Phone Button */}
       <div className="relative group">
         {/* Pulse Animation Background */}

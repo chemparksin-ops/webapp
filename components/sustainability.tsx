@@ -7,8 +7,17 @@ export function Sustainability() {
   ]
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/5">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/5 relative overflow-hidden">
+      {/* Added background image with overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/sustainability-water-treatment.jpg"
+          alt="Sustainability Background"
+          className="w-full h-full object-cover opacity-5"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <h2 className="text-4xl font-bold text-foreground mb-4 text-center">Sustainability Commitments</h2>
         <p className="text-lg text-foreground/60 text-center mb-12 max-w-2xl mx-auto">
           Aligned with UN Sustainable Development Goals for clean water, responsible consumption, and climate action

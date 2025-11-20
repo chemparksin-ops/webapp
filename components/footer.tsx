@@ -6,25 +6,28 @@ export function Footer() {
   const footerLinks = {
     Company: [
       { name: "About Us", href: "/about" },
-      { name: "News & Press", href: "/news" },
+      { name: "Blog", href: "/blog" },
       { name: "Contact", href: "/contact" },
     ],
     Products: [
-      { name: "CHEMION® Resins", href: "/products" },
-      { name: "AQUAMEM® Membranes", href: "/products" },
-      { name: "Treatment Plants", href: "/products" },
-      { name: "ChemPure® Systems", href: "/products" },
+      { name: "RO Membrane Solutions", href: "/products/ro-membrane-solutions" },
+      { name: "Boiler Water Treatment", href: "/products/boiler-water-treatment" },
+      { name: "Cooling Water Treatment", href: "/products/cooling-water-treatment" },
+      { name: "ETP Treatment Chemicals", href: "/products/etp-treatment-chemicals" },
+      { name: "WTP Treatment Chemicals", href: "/products/wtp-treatment-chemicals" },
     ],
     Services: [
-      { name: "Operations & Maintenance", href: "/services" },
-      { name: "Water Audits", href: "/services" },
-      { name: "Project Financing", href: "/services" },
-      { name: "24x7 Support", href: "/services" },
+      { name: "ETP Audit Services", href: "/services/etp-audit-services" },
+      { name: "WTP Audit Services", href: "/services/wtp-audit-services" },
+      { name: "Boiler Water Treatment Audit", href: "/services/boiler-water-treatment-audit" },
+      { name: "Cooling Tower Treatment Audit", href: "/services/cooling-tower-treatment-audit" },
+      { name: "RO Troubleshooting Audit", href: "/services/ro-troubleshooting-audit" },
+      { name: "Water Treatment Consultation", href: "/services/water-treatment-consultation" },
     ],
   }
 
   return (
-    <footer className="bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+    <footer className="bg-gradient-to-r from-slate-900 to-blue-900 text-white">
       {/* Main footer content */}
       <div className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="max-w-7xl mx-auto">
@@ -33,7 +36,7 @@ export function Footer() {
             <div className="col-span-1 sm:col-span-2 lg:col-span-1 fade-in">
               <div className="mb-4 flex items-center gap-2">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Chem_park_Logo_1-01-HyqUqWDyFJ0Jd4fyBllHTpCENANDZE.jpg"
+                  src="/Chem_park_Logo_1-01.jpg"
                   alt="ChemParks Logo"
                   width={40}
                   height={40}
@@ -71,17 +74,23 @@ export function Footer() {
               <ul className="space-y-3">
                 <li className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm duration-200">
                   <Mail size={16} className="flex-shrink-0" />
-                  <a href="mailto:info@chemparks.in" className="font-light">info@chemparks.in</a>
+                  <a href="mailto:chemparks.in@gmail.com" className="font-light">
+                    chemparks.in@gmail.com
+                  </a>
                 </li>
                 <li className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm duration-200">
                   <Phone size={16} className="flex-shrink-0" />
-                  <a href="tel:9500506061" className="font-light">9500506061</a>
+                  <a href="tel:9500506061" className="font-light">
+                    9500506061
+                  </a>
                 </li>
                 <li className="flex items-start gap-2 text-white/80 text-sm">
                   <MapPin size={16} className="mt-0.5 flex-shrink-0" />
                   <span className="font-light">
-                    5A, Thiruvalluvar Nagar<br />
-                    Sirupoolvapatti, Ring Road<br />
+                    5A, Thiruvalluvar Nagar
+                    <br />
+                    Sirupoolvapatti, Ring Road
+                    <br />
                     Tirupur - 641603, Tamil Nadu
                   </span>
                 </li>
@@ -101,13 +110,18 @@ export function Footer() {
               >
                 Yesp Tech Solutions
               </a>
-         
             </p>
             <div className="flex gap-6">
-              <Link href="/privacy-policy" className="text-white/70 hover:text-white text-sm transition-colors duration-200 font-light">
+              <Link
+                href="/privacy-policy"
+                className="text-white/70 hover:text-white text-sm transition-colors duration-200 font-light"
+              >
                 Privacy Policy
               </Link>
-              <Link href="/terms-and-conditions" className="text-white/70 hover:text-white text-sm transition-colors duration-200 font-light">
+              <Link
+                href="/terms-and-conditions"
+                className="text-white/70 hover:text-white text-sm transition-colors duration-200 font-light"
+              >
                 Terms of Service
               </Link>
             </div>

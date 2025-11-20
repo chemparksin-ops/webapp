@@ -1,35 +1,32 @@
 "use client"
-
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const slides = [
   {
-    image: "/water-treatment-plant-industrial.jpg",
-    title: "Innovative Water Treatment",
-    subtitle: "Advanced solutions for industrial, municipal, and residential water purification",
-    badge: "30+ Years Excellence"
+    image: "/membrane-technology-water-filtration-system.jpg",
+    title: "ETP & WTP Audit Services",
+    subtitle: "Comprehensive plant audits ensuring regulatory compliance and optimal performance",
+    badge: "30+ Years Excellence",
   },
   {
-    image: "/ion-exchange-resins-water-treatment.jpg",
-    title: "CHEMION® Premium Resins",
-    subtitle: "High-performance ion exchange resins for superior water quality",
-    badge: "Industry Leading"
+    image: "/reverse-osmosis-system.jpg",
+    title: "RO Membrane Solutions",
+    subtitle: "Specialized chemicals for maximizing Reverse Osmosis system efficiency and lifespan",
+    badge: "Advanced Technology",
   },
   {
-    image: "/membrane-water-treatment-technology.jpg",
-    title: "AQUAMEM® Advanced Systems",
-    subtitle: "Cutting-edge membrane technology for ZLD and water recycling",
-    badge: "Sustainable Solutions"
+    image: "/industrial-boiler-room.jpg",
+    title: "Boiler & Cooling Treatment",
+    subtitle: "Complete water treatment programs for boilers and cooling systems",
+    badge: "Industrial Grade",
   },
   {
-    image: "/water-treatment-plant-industrial.jpg",
-    title: "Complete Water Management",
-    subtitle: "End-to-end solutions for water treatment and environmental management",
-    badge: "Turnkey Projects"
+    image: "/cooling-tower-water-treatment.jpg",
+    title: "Water Treatment Chemicals",
+    subtitle: "Comprehensive range of chemicals for ETP, WTP, and process water treatment",
+    badge: "Quality Assured",
   },
 ]
 
@@ -49,9 +46,9 @@ export function Hero() {
     <section className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] mt-[60px] sm:mt-[80px] overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-blue-600/20 to-cyan-600/20"></div>
-        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-cyan-600/20 to-teal-600/20"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
       </div>
 
       {/* Slider Images */}
@@ -63,27 +60,31 @@ export function Hero() {
           }`}
         >
           <Image
-            src={slide.image}
+            src={slide.image || "/placeholder.svg"}
             alt={slide.title}
             fill
             className="w-full h-full object-cover"
             priority={index === 0}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70"></div>
+          {/* Updated overlay gradient to blue tint */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/30 via-slate-900/50 to-slate-900/70 mix-blend-multiply"></div>
         </div>
       ))}
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className={`transform transition-all duration-1000 ${
-            isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
+          <div
+            className={`transform transition-all duration-1000 ${
+              isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
+          >
             {/* Badge */}
             <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-sm sm:text-base font-light tracking-wide mb-6 sm:mb-8">
-              <div className="w-2 sm:w-3 h-2 sm:h-3 bg-green-400 rounded-full animate-pulse"></div>
+              {/* Updated badge dot color to cyan */}
+              <div className="w-2 sm:w-3 h-2 sm:h-3 bg-cyan-400 rounded-full animate-pulse"></div>
               <span className="hidden xs:inline">{slides[current].badge}</span>
-              <span className="xs:hidden">{slides[current].badge.split(' ')[0]}+</span>
+              <span className="xs:hidden">{slides[current].badge.split(" ")[0]}+</span>
             </div>
 
             {/* Title */}
@@ -99,22 +100,37 @@ export function Hero() {
             {/* Trust Indicators */}
             <div className="mt-6 sm:mt-8 md:mt-10 flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 text-white/70 text-xs sm:text-sm md:text-base">
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <svg className="w-3 h-3 sm:w-4 sm:h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                {/* Updated icon color to cyan */}
+                <svg className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span className="font-light tracking-wide hidden sm:inline">ISO Certified</span>
                 <span className="font-light tracking-wide sm:hidden">ISO</span>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <svg className="w-3 h-3 sm:w-4 sm:h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                {/* Updated icon color to cyan */}
+                <svg className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span className="font-light tracking-wide hidden sm:inline">Quality Assured</span>
                 <span className="font-light tracking-wide sm:hidden">Quality</span>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <svg className="w-3 h-3 sm:w-4 sm:h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                {/* Updated icon color to cyan */}
+                <svg className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 <span className="font-light tracking-wide hidden sm:inline">Expert Team</span>
                 <span className="font-light tracking-wide sm:hidden">Experts</span>
@@ -165,7 +181,12 @@ export function Hero() {
 
       {/* Scroll Indicator - Hidden on mobile to avoid overlap with navigation */}
       <div className="absolute bottom-16 sm:bottom-14 md:bottom-16 lg:bottom-20 left-1/2 transform -translate-x-1/2 text-white/60 animate-bounce hidden sm:block">
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg
+          className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </div>
