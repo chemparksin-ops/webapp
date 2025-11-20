@@ -8,7 +8,7 @@ export function Products() {
       description:
         "Advanced reverse osmosis chemicals including antiscalants, cleaners, and biocides for optimal membrane performance.",
       icon: Droplets,
-      specs: "RO Anti Scalent, Membrane Clearance, BioSits, Online System",
+      specs: "RO Antiscalants, Membrane Cleaners, Biocide, Online System",
       image: "/reverse-osmosis-membrane-industrial.jpg",
     },
     {
@@ -16,7 +16,7 @@ export function Products() {
       description:
         "Complete boiler water solutions to prevent scale, corrosion, and carryover, ensuring safety and efficiency.",
       icon: Factory,
-      specs: "HyperBoiler, Oxygen Scavenger, pH Control, Scale Prevention",
+      specs: "AVT Program, Oxygen Scavenger, pH Control, Scale Prevention",
       image: "/industrial-boiler-water-treatment.jpg",
     },
     {
