@@ -254,20 +254,13 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-light text-gray-900 mb-3 tracking-wide">Email</h3>
-                <p className="text-base text-gray-600 font-mono font-light">info@chemparks.in</p>
+                <p className="text-base text-gray-600 font-mono font-light">chemparks@chemparks.in</p>
+                                <p className="text-base text-gray-600 font-mono font-light">chemparks.in@gmail.com</p>
               </a>
             </div>
 
             {/* GST Information */}
-            <div className="mt-12 text-center">
-              <div className="inline-flex items-center gap-3 px-4 py-2 bg-gray-50 border border-gray-100 rounded-full">
-                <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                <span className="text-sm font-light text-gray-700 tracking-wide">GST:</span>
-                <span className="text-sm text-gray-600 font-light">33AUHPA8522E2Z2</span>
-              </div>
-            </div>
+
           </div>
         </section>
       </main>
