@@ -88,7 +88,7 @@ const productData = {
       "Boilers are the heart of many industrial processes. Our Boiler Water Treatment chemicals are engineered to handle varying water qualities and operating pressures, providing complete protection against the most common causes of boiler failure.",
     features: [
       {
-        title: "HyperBoiler",
+        title: "AVT Program",
         description: "All-in-one internal treatment for scale and corrosion control.",
         benefits: ["Simplified dosing", "Phosphate/Polymer blend", "Online cleaning effect"],
       },
@@ -165,7 +165,7 @@ const productData = {
         ],
       },
       {
-        title: "BioSits & Biocides",
+        title: "Oxidizing And Oxidizing Biocides",
         description: "Broad spectrum oxidizing and non-oxidizing biocides.",
         benefits: ["Controls Legionella", "Removes algae and fungi", "Effective against slime"],
       },
