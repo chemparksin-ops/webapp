@@ -23,7 +23,7 @@ export function Products() {
       name: "Cooling Water Treatment",
       description: "Specialized chemicals for cooling towers to control corrosion, scale, and biological growth.",
       icon: Recycle,
-      specs: "Corrosion Control, Scale Inhibitors, BioSits, Biocides",
+      specs: "Corrosion Control, Scale Inhibitors, Oxidizing And Non-Oxidizing Biocides",
       image: "/cooling-tower-water-treatment.jpg",
     },
     {
