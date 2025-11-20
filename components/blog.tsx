@@ -33,36 +33,7 @@ export function Blog() {
       image: "/water-treatment-plant-industrial-facility.jpg",
       icon: TrendingUp,
     },
-    {
-      title: "Optimizing Industrial RO Plants: A Comprehensive Maintenance Guide",
-      excerpt:
-        "Learn essential maintenance strategies to extend membrane life, reduce fouling, and optimize energy consumption in your industrial Reverse Osmosis plant.",
-      category: "Maintenance",
-      readTime: "8 min read",
-      date: "Nov 15, 2025",
-      image: "/reverse-osmosis-system.jpg",
-      icon: Settings,
-    },
-    {
-      title: "Advanced ETP Solutions for Zero Liquid Discharge (ZLD) Compliance",
-      excerpt:
-        "Explore how modern Effluent Treatment Plants with ZLD technology help industries meet strict environmental regulations while recovering valuable water.",
-      category: "Compliance",
-      readTime: "7 min read",
-      date: "Nov 12, 2025",
-      image: "/effluent-treatment-plant.jpg",
-      icon: Shield,
-    },
-    {
-      title: "Boiler Water Treatment: Preventing Corrosion and Scale",
-      excerpt:
-        "A deep dive into chemical treatment programs for industrial boilers to prevent catastrophic failures and improve heat transfer efficiency.",
-      category: "Technical Guide",
-      readTime: "6 min read",
-      date: "Nov 10, 2025",
-      image: "/industrial-boiler-room.jpg",
-      icon: Activity,
-    },
+  
   ]
 
   const categories = [
